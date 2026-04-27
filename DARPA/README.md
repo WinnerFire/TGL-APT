@@ -1,16 +1,16 @@
 # Demo (DARPA CADETS E3)
 In this demo, 
-we use the CADETS E3 dataset to demonstrate Kairos' end-to-end workflow.
+we use the CADETS E3 dataset to demonstrate TGL-APT' end-to-end workflow.
 Running this pipeline will reproduce the experimental results reported in our paper.
 
-1. Follow the description in the [environment settings](settings/environment-settings.md) to set up the required environment for Kairos.
+1. Follow the description in the [environment settings](settings/environment-settings.md) to set up the required environment for TGL-APT.
 
 2. Follow the description in the [CADETS E3 database settings](settings/database.md#cadets-e3) to create a database for the workload. 
 
 3. Edit CADETS E3's [config.py](CADETS_E3/config.py) to set the variable `raw_dir` as the absolute path of the folder in which your raw CADETS E3 data is located. 
 In addition, change the database-related variables (e.g. username, password, etc.) based on your database configurations.
 
-4. Run the Kairos workflow using the commands:
+4. Run the TGL-APT workflow using the commands:
 ```commandline
 cd CADETS_E3
 make pipeline
@@ -48,7 +48,7 @@ where
 
 * `reconstruction.log` records some reconstruction statistics during testing.
 
-* `anomalous_queue.log` records the anomalous time windows flagged by Kairos.
+* `anomalous_queue.log` records the anomalous time windows flagged by TGL-APT.
 
 * `evaluation.log` records the evaluation results for the CADETS E3 dataset.
 
@@ -56,14 +56,14 @@ where
 ### Using the Pre-trained Model
 
 As expected, 
-Kairos detection performance relies on the quality of the trained GNN models,
+TGL-APT detection performance relies on the quality of the trained GNN models,
 but model training takes a significant amount of time.
 You can skip training and directly use our pre-trained models
 for quick evaluations.
 To do so,
 simply provide the file path of the pre-trained model
 (which you can download from [here](https://drive.google.com/drive/u/0/folders/1YAKoO3G32xlYrCs4BuATt1h_hBvvEB6C))
-in `test.py` (in [this](https://github.com/ProvenanceAnalytics/kairos/blob/37044bfd30393c0a0543d3b98f2049cd039cc013/DARPA/CADETS_E3/test.py#L170) line of code) and then run:
+in `test.py` (in [this](https://github.com/ProvenanceAnalytics/TGL-APT/blob/37044bfd30393c0a0543d3b98f2049cd039cc013/DARPA/CADETS_E3/test.py#L170) line of code) and then run:
 ```commandline
 make test
 make anomaly_detection
