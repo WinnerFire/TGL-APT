@@ -52,19 +52,3 @@ where
 
 * `evaluation.log` records the evaluation results for the CADETS E3 dataset.
 
-
-### Using the Pre-trained Model
-
-As expected, 
-TGL-APT detection performance relies on the quality of the trained GNN models,
-but model training takes a significant amount of time.
-You can skip training and directly use our pre-trained models
-for quick evaluations.
-To do so,
-simply provide the file path of the pre-trained model
-(which you can download from [here](https://drive.google.com/drive/u/0/folders/1YAKoO3G32xlYrCs4BuATt1h_hBvvEB6C))
-in `test.py` (in [this](https://github.com/ProvenanceAnalytics/TGL-APT/blob/37044bfd30393c0a0543d3b98f2049cd039cc013/DARPA/CADETS_E3/test.py#L170) line of code) and then run:
-```commandline
-make test
-make anomaly_detection
-```
